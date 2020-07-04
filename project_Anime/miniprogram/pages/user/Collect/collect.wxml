@@ -1,0 +1,12 @@
+<view class="comment">
+  <view wx:for="{{CommentList}}" wx:key="id" class="comment_item">
+  <image src="{{item.commet_image}}"  mode="aspectFill"></image>
+  <view class="comment_content"> 
+    <text>{{item.title}}</text>
+    <view class="comment_foot">
+    <text>{{item.commet_name}}</text>
+    <text class="hot">热度: {{item.hot}}</text>
+    </view>
+  </view>
+  </view>  
+</view>

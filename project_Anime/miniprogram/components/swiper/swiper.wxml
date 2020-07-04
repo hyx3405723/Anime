@@ -1,0 +1,3 @@
+<slot bindtouchstart="handleTouchstart"
+   bindtouchend="handleTouchend"></slot>
+  

@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "Swiper": "../../components/swiper/swiper",
+    "wux-popover": "wux-weapp/popover/index",
+    "wux-tabs": "wux-weapp/tabs/index",
+    "wux-tab": "wux-weapp/tab/index",
+    "wux-cell-group": "wux-weapp/cell-group/index",
+    "wux-cell": "wux-weapp/cell/index",
+    "wux-button": "wux-weapp/button/index",
+    "wux-popup": "wux-weapp/popup/index"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#0D69F7",
+  "navigationBarTitleText": "视频中心",
+  "navigationBarTextStyle": "white"
+}

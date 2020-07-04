@@ -1,0 +1,23 @@
+
+.tabs_title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title_item{
+  display: flex;
+  margin: 17rpx 60rpx 15rpx ;
+  padding: 0rpx 10rpx;
+  font-size: 33rpx;
+}
+.active{
+  color:#435ED3;
+  border-bottom: 5rpx solid currentColor;
+}
+.index_cate {
+  display: flex;
+}
+.index_cate navigator {
+  margin: 17rpx 60rpx 15rpx ;
+  font-size: 32rpx;
+}

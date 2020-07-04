@@ -1,0 +1,12 @@
+<view class="history">
+  <navigator wx:for="{{moreHistoryList}}" wx:key="id" url="{{item.navigateto_url}}">
+  <image src="{{item.history_image}}"  mode="aspectFill"></image>
+  <view class="history_content"> 
+    <text>{{item.title}}</text>
+    <view class="history_foot">
+    <text>{{item.history_name}}</text>
+    <text>{{item.time}}</text>
+    </view>
+  </view>
+  </navigator>  
+</view>

@@ -1,0 +1,30 @@
+<view class="page">
+  <!-- tag选项卡开始 -->
+  <view class="page__bd">
+    <wux-tabs wux-class="bordered" controlled scroll current="{{key}}" bindchange="onTabsChange">
+      <block wx:for="{{tabs}}" wx:key="key">
+        <wux-tab key="{{item.key}}" title="{{item.title}}"></wux-tab>
+      </block>
+    </wux-tabs>
+    <swiper current="{{index}}" bindchange="onSwiperChange" class="swiper-content">
+      <block wx:for="{{tabs}}" wx:key="key">
+        <swiper-item>
+          <!-- 滚动开始 -->
+          <scroll-view scroll-y class="content">
+            <wux-wing-blank size="default" wx:for="{{item.category_list}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+              <wux-card>
+                <navigator slot="body" url="{{item1.navigator_url}}" data-index="{{item1.category_id}}" bindtap="getHistoryInfo">
+                  <image src="{{item1.image_src}}" class="image"></image>
+                  <view class="text">{{item1.content}}</view>
+                  <view class="textname">{{item1.name}}</view>
+                </navigator>
+              </wux-card>
+            </wux-wing-blank>
+          </scroll-view>
+          <!-- 滚动结束 -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- tag选项卡结束 -->
+</view>

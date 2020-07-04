@@ -1,0 +1,67 @@
+page {
+  margin: 0;
+  padding: 0;
+}
+.wux-tabs{
+  height: 75rpx !important;
+  line-height: 75rpx !important;
+}
+.wux-tabs__tab--horizontal.wux-tabs__tab--scroll {
+  margin-left: 50rpx;
+  padding: 0 10rpx !important;
+}
+.wux-tabs__tab--current{
+  color: rgb(0, 0, 0) !important;
+  font-size: 32rpx;
+}
+.wux-tabs__tab-bar {
+  background-color: #435ED3 !important;
+}
+.content {
+  height: 100vh;
+}
+
+.swiper-content {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fcfcfc;
+}
+.wux-card{
+  padding-bottom: 0rpx !important;
+}
+.wux-card--bordered {
+  margin-top: 25rpx;
+}
+.wux-wingblank--default {
+  margin-left: 70rpx !important;
+  margin-right: 70rpx !important;
+  margin-bottom: 30rpx !important;
+}
+
+.wux-card__bd {
+  padding: 0rpx !important;
+}
+.image {
+  width: 100%;
+  height: 250rpx;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  margin-bottom: 10rpx;
+}
+.text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-left: 30rpx;
+  color: rgb(0, 0, 0);
+}
+navigator{
+  padding-bottom: 12rpx !important;
+
+}
+.textname{
+  margin-bottom: 0rpx;
+  margin-left: 30rpx;
+  color: #80848f;
+  font-size: 29rpx;
+}

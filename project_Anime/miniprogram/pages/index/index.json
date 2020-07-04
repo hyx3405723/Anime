@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Tabs": "/components/Tabs/Tabs",
+    "Recomment": "../index/recomment/recomment",
+    "Search": "../index/search/search"
+  },
+  "navigationBarTitleText": "首页"
+}

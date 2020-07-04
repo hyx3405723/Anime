@@ -1,0 +1,15 @@
+<view>
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+      <!-- 推荐界面开始 -->
+      <Recomment></Recomment>
+            <!-- 推荐界面结束  -->
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">
+    <!-- 搜素界面开始 -->
+      <Search></Search>
+      <!-- 搜素界面结束 -->
+    </block>
+    <block wx:elif="{{tabs[2].isActive}}"></block>
+  </Tabs>
+</view>

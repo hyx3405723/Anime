@@ -1,0 +1,119 @@
+<!--  滑块区域开始-->
+<view class="title">
+	<Swiper bindswiperAction="handleSwiperAction">
+		<wux-popover placement="rightTop" body-style="marign-top:10px;">
+			<icon class="icon iconfont icon-bofangshipin"></icon>
+			<text>{{audio_info.audio_title}}</text>
+			<view slot="content" style="color: black;  font-size:26rpx; width:220rpx; height:70rpx; background:white; padding:8px 10rpx 0rpx; text-align:center; ">滑动切换视频</view>
+		</wux-popover>
+	</Swiper>
+</view>
+<!--  滑块区域结束-->
+<!--  视频开始-->
+<view class="viewvideo">
+	<video class="video" danmu-list="{{danmuList}}"  src="{{audio_src}}" title="{{audio_info.audio_title}}" direction="90" controls loopshow-mute-btn enable-play-gesture vslide-gesture enable-auto-rotation show-screen-lock-button loop enable-auto-rotation danmu-btn enable-danmu enable-auto-rotation></video>
+</view>
+<view class="othercontent">
+	<ul>
+		<li>
+			<icon class="icon1 iconfont icon-tubiaozhizuomoban"></icon>
+			<text>{{audio_info.audio_icontext2}}</text>
+		</li>
+		<li bindtap="handleDownload">
+			<icon class="icon3 iconfont icon-xiazai }}"></icon>
+			<text class="text">下载</text>
+		</li>
+		<li bindtap="Collected">
+			<icon class="icon2 iconfont  {{ischangeiconchange?'icon-shoucang2 iconcolor ':'icon-shoucang'}}"></icon>
+			<text class="text">{{audio_info.audio_icontext1}}</text>
+		</li>
+	</ul>
+</view>
+<!--  视频结束-->
+<!-- 相关开始 -->
+<view class="album_warp" v-if="album.length">
+	<view class="album_titel">相关</view>
+	<view class="album_list">
+		<view class="album_item">
+			<view class="album_cover">
+				<image src="{{audio_info.image_src}}" mode="aspectFill"></image>
+			</view>
+			<view class="album_info">
+				<view class="album_info_text">专辑</view>
+				<view class="album_name">{{audio_info.audio_name}}</view>
+				<button  bindtap="getbindgetuserinfo" class=" commenticonfont"><text class="iconfont icon-pinglun1"> 评论</text></button>
+			</view>
+		</view>
+	</view>
+</view>
+<!--  相关结束-->
+<!-- 选集开始 -->
+<view class="xuanji">
+	<view class="xuanji_title">
+		<text class="title_left">选集</text>
+		<view class="title_more" bindtap="openanthology">
+			<text >查看更多</text>
+			<text  class="iconfont icon-arrow-right"></text>
+		</view>
+	</view>
+	<view class="xuanji_tabs">
+		<wux-tabs controlled scroll theme="assertive" current="{{ current }}" bindchange="onChange">
+			<wux-tab key="{{''+item.audio_id}}" wx:for="{{anthology_list}}">{{item.audio_id+1}}</wux-tab>
+		</wux-tabs>
+	</view>
+</view>
+<!-- 选集结束 -->
+<!-- 最热评论开始 -->
+<view class="footcontent">
+	<view class="footcontenttop">
+		<icon class="iconfont icon-zambia"></icon>最热评论
+	</view>
+	<view class="comment_list">
+		<view wx:for="{{audio_info.audio_comment}}" wx:key="comment_id" wx:for-item="item" class="comment_item">
+			<view class="comment_user">
+				<view class="user_icon">
+					<image mode="scaleToFill" src="{{item.comment_src}}"></image>
+				</view>
+				<view class="user_name">
+					<view class="user_content">
+						<view class="user_nickname">{{item.comment_title}}</view>
+						<view class="comment_content">{{item.comment_content}}</view>
+					</view>
+					<view class="comment_text">
+						<text bindtap="changecommentcount" data-id="{{id}}" data-index="{{item.comment_id}}" class="iconfont icon-zambia" >{{item.comment_mount}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view>
+</view>
+<!-- 最热评论结束 -->
+<!-- 评论对话框 -->
+<view>
+	<modal title="评论" hidden="{{isCommentary}}" confirm-text="确定" cancel-text="取消" bindconfirm="modalConfirm" bindcancel="modalCancel">
+		<view class="dioglesection">
+			<view class="diogleimage">
+				<image src="{{userimage}}" bindtap="handleupdate"></image>
+				<text>用户名: </text>
+				<text class="username">{{userdigloname}}</text>
+			</view>
+			<view class="diogleinput">
+				<textarea model:value="{{userdiglocontent}}" placeholder="请输入评论内容"></textarea>
+			</view>
+		</view>
+	</modal>
+</view>
+
+<!-- 选集弹出框开始  -->
+<wux-popup closable position="bottom" visible="{{ visible2 }}" bind:close="onClose2">
+	<wux-cell-group title="选集">
+		<view  hover-class="none">
+		<view class="anthology">
+		<text wx:key="{{audio_id}}" wx:for="{{anthology_list}}" class="{{item.isactive ? 'anthologyselecttext' : 'anthologytext'}}" bindtap="anthologyselect" id="{{item.audio_id}}">{{item.audio_id+1}}</text>
+		</view>
+		</view>
+	</wux-cell-group>
+</wux-popup>
+<!-- 选集弹出框结束  -->

@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+      "wux-tabs": "wux-weapp/tabs/index",
+      "wux-tab": "wux-weapp/tab/index",
+      "wux-badge": "wux-weapp/badge/index",
+      "wux-card": "wux-weapp/card/index",
+      "wux-wing-blank": "wux-weapp/wing-blank/index"
+    },
+    "navigationBarTitleText": "分类"
+}

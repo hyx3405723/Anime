@@ -1,0 +1,31 @@
+  <!-- 轮播图 开始 -->
+      <view class="index_swiper">
+        <swiper autoplay circular indicator-active-color="#435ED3" interval="3000">
+          <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+            <view class="text">
+              <text>{{item.count}}</text>
+              <text>{{item.content}}</text>
+            </view>
+            <image wx:if="{{item.image_src}}" mode="widthFix" src="{{item.image_src}}"></image>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 轮播图 结束 -->
+      <!-- 楼层 开始 -->
+      <view class="index_floor">
+        <view wx:for="{{floorList}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="floor_group">
+          <!-- 标题 -->
+          <view class="floor_title iconfont icon-youjiantou-copy">
+            <h1>{{item.floorList.floor_title.name}}</h1>
+          </view>
+          <!-- 内容 -->
+          <view class="floor_list">
+            <navigator wx:for="{{item.floorList.product_list}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1" url="{{item1.navigator_url}}">
+              <image mode="aspectFill" src="{{item1.image_src}}"></image>
+              <view class="floor_name">{{item1.name}}</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <!-- 楼层 结束 -->
+      

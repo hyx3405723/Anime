@@ -1,0 +1,127 @@
+page {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.login {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.1rpx solid rgb(241, 241, 241);
+  background-color: #f8f8f8;
+  font-size: 35rpx;
+}
+
+.login .loginbtn {
+  background-color: #f8f8f8;
+}
+
+.login .loginimag {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  background-color: #fff;
+}
+
+.text {
+  color: #e600ff;
+}
+
+.history {
+  width: 100%;
+  padding: 0rpx 20rpx;
+  margin: 20rpx 0rpx 0rpx;
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+
+.history_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 46rpx;
+  margin-bottom: 10rpx;
+}
+
+.history_title .title_left {
+  color: rgb(1, 1, 1);
+  font-size: 30rpx;
+}
+
+.history_title .title_more {
+  color:rgba(0,0,0,.45);
+  font-size: 26rpx;
+  margin-right: 9rpx;
+}
+
+.history_title .title_more .icon-arrow-right {
+  font-size: 32rpx;
+}
+
+.history_content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.history_content .content_item {
+  display: flex;
+  width: 31%;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.history_content .content_item:last-child {
+  margin-right: 0rpx;
+}
+
+.history_content .content_item image {
+  height: 130rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #fff;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+}
+.wux-cell-group{
+  margin-bottom: 1rpx;
+}
+.wux-cell-group__bd::after{
+  border-top-width: 0PX !important;
+}
+.wux-cell {
+  padding: 25rpx 28rpx 25rpx 19rpx !important;
+}
+.wux-cell__text{
+  font-size: 30rpx;
+}
+.button{
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  background-color: #fff;
+  padding: 0rpx 20rpx;
+  display: inline-block;
+  text-align: left;
+  margin-right:0;
+  margin-left:0;
+  font-size: 30rpx;
+  font-weight: normal;
+  border-bottom: 1px solid rgb(241, 241, 241);
+}
+.button:not([size='mini']){
+  width: 100%;
+  margin-right: 0rpx;
+  margin-left: 0rpx;
+}
+.icontext{
+  margin-left: 543rpx;
+  color: rgba(11, 11, 11, 0.45);
+  font-size: 37rpx;
+}

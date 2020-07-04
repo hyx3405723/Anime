@@ -1,0 +1,38 @@
+<view class="page">
+	<!-- 登录界面开始 -->
+	<view class="login">
+		<button class="loginbtn" open-type="getUserInfo" bindgetuserinfo="getbindgetuserinfo">
+			<image class="loginimag" src="{{userimage}}"></image>
+		</button>
+		<view class="{{isusername?'text':''}}">{{userdigloname}}</view>
+	</view>
+	<!-- 登录界面结束 -->
+	<!-- 历史记录开始 -->
+	<view class="history">
+		<view class="history_title">
+			<text class="title_left">历史记录</text>
+			<view class="title_more" bindtap="navagateUrl">
+				<text>更多</text>
+				<text  class="iconfont icon-arrow-right"></text>
+			</view>
+		</view>
+		<view class="history_content">
+			<navigator class="content_item" wx:for="{{historyList}}" wx:key="id" url="{{item.navigateto_url}}">
+				<image src="{{item.history_image}}" mode="aspectFill"></image>
+				<view>{{item.title}}</view>
+			</navigator>
+		</view>
+	</view>
+	<!-- 历史记录结束 -->
+	<!-- 我的收藏开始 -->
+	<wux-cell-group>
+		<wux-cell title="我的收藏" is-link url="/pages/user/Collect/collect"></wux-cell>
+	</wux-cell-group>
+	<!-- 我的收藏结束 -->
+	<!-- 意见反馈开始 -->
+		<button open-type="feedback" class="button">意见反馈 		<text  class="iconfont icon-arrow-right icontext"></text></button>
+	<!-- 意见反馈结束 -->
+		<!-- 联系客服开始 -->
+			<button open-type="contact" class="button">联系客服 <text class="iconfont icon-arrow-right icontext"></text></button>
+		<!-- 	联系客服结束 -->
+</view>
